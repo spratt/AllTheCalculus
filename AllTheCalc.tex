@@ -1,0 +1,145 @@
+\documentclass[letterpaper,normalheadings,twocolumn]{scrreprt}
+%\documentclass[12pt,letterpaper]{scrreprt}
+
+% Page Layout
+% \usepackage{fullpage}
+% \usepackage{multicol}
+\usepackage[margin=0.5in]{geometry}
+
+% Use utf-8 encoding for foreign characters
+\usepackage[utf8]{inputenc}
+
+% More symbols
+\usepackage{graphicx,amsmath,amssymb,dsfont}
+
+% Algorithms
+\usepackage[ruled]{algorithm2e}
+
+% Theorems
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+%\renewcommand{\thesection}{\arabic{section}}
+%\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}} 
+
+% Package for including code in the document
+\usepackage{listings}
+
+% Captions
+\usepackage[small,bf,hang]{caption}
+\setlength{\captionmargin}{12pt}
+
+\usepackage{verbatim}
+\title{All The Calculus}
+
+\begin{document}
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%TRIG%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Trigonometric Identities}
+\[\begin{array}{ccccc}
+\sin^2{\theta} &+& \cos^2{\theta} &=& 1 \\
+\tan^2{\theta} &+& 1 &=& \sec^2{\theta} \\
+1 &+& \cot^2{\theta} &=& \csc^2{\theta} 
+\end{array}\]
+\[\begin{array}{ccc}
+SOH & CAH & TOA \\
+\sin\theta = \frac{opposite}{hypoteneuse} & \cos\theta = \frac{adjacent}{hypoteneuse} & \tan\theta = \frac{opposite}{adjacent} \\
+\end{array}\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%DERIVATIVES%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% \\%%%%%%%%
+
+\chapter{Derivatives}
+
+Definition \\
+Product Rule \\
+Chain Rule \\
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|l|l||l|l|}
+  \hline
+  $f(u)$ & $\frac{d}{du}f(u)$ & $f^{-1}(u)$ & $\frac{d}{du}f^{-1}(u)$ \\  
+  \hline
+  & & & \\ $\sin{u}$ & $du\cos{u}$ & $\sin^{-1}{u}$ & $\frac{du}{\sqrt{1 - u^2}}$\\
+  & & & \\ $\cos{u}$ & $-du\sin{u}$ & $\cos^{-1}{u}$ & $\frac{-du}{\sqrt{1 - u^2}}$\\
+  & & & \\ $\tan{u}$ & $du\sec^2{u}$ & $\tan^{-1}{u}$ & $\frac{du}{\sqrt{1 + u^2}}$\\
+  & & & \\ $\csc{u}$ & $-du\cot{u}\csc{u}$ & $\csc^{-1}{u}$ & $\frac{-du}{\sqrt{1-\frac{1}{u^2}} u^2}$\\
+  & & & \\ $\sec{u}$ & $du\tan{u}\sec{u}$ & $\sec^{-1}{u}$ & $\frac{du}{\sqrt{1-\frac{1}{u^2}} u^2}$\\
+  & & & \\ $\cot{u}$ & $-du\csc^2{u}$ & $\cot^{-1}{u}$ & $\frac{-du}{\sqrt{1 + u^2}}$\\ 
+  & & & \\
+  \hline
+  \end{tabular}
+  \caption{Trig Derivatives; Note that relations that hold for tan and sec also hold for cot and csc, but with a negative sign}
+  \label{tab:results}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%INTEGRALS%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Integration}
+The \emph{integral} of a function $f(x)$ can be defined in a few ways. The simplest one to work with is that the integral $F(x)$ of $f(x)$ is the function that satisfies $F'(x) = f(x)$. It should perhaps be noted that $F(x)$ is perhaps more accurately a \emph{set} of functions, as derivation loses a certain amount of information (namely, constants). This is why we include the \emph{constant of integration} $C$ to the integral $F$, to indicate this loss of information. Using this definition we can think of finding the integral $F$ as figuring out what function was differentiated into $f$, which fits nicely with how we tend to approach integration. The integral represents the area under the curve $f(x)$ (with respect to the x-axis), but because of the constant of integration it therefore isn't especially meaningful to consider a \emph{single} value of $F(x)$, unless we are treating the integral simply as the anti-derivative, in which case we drop the constant of integration.
+\section{Basics}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$\int{f(x) + g(x)} = \int{f(x)} + \int{g(x)}$ (integration is distributive over addition)
+$\int{cf(x)} = c\int{f(x)}$ (integration is not effected by constant factors)
+(oh hey that's the definition of a linear transformation)
+
+Some rules to know by heart:
+$\int{u^{n}du} = \frac{u^{n+1}}{(n+1)} + C$\\
+$\int{\frac{du}{u}} = \ln{|u|} + C$\\
+Learn all the trig derivatives so you can spot them and "undo" them.
+
+\section{Definite Integrals}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Definition
+
+\section{Integration by Substitution}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+let u = ...
+du = ...
+
+\section{Integration by Parts}
+let u = ... dv =...
+du = ... v =...
+
+\section{Integrating the Product of Trigonometric Functions}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+$\sin^k\theta$ \\
+$\cos^k\theta$ \\
+$\sin^j\theta\cos^k\theta$ \\
+$\tan^j\theta\sec^k\theta$ \\
+$\sin(a\theta)\cos(b\theta)$ \\
+
+
+\section{Integrating by Substituting Trigonometric Functions}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+$\sqrt{u^2 + a^2}$\\
+$\sqrt{u^2 - a^2}$\\
+$\sqrt{a^2 - u^2}$\\
+
+
+\section{Integrating Partial Fractions}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+large/small vs small/large\\
+long division\\
+product of degree ones\\
+product of degree ones, some raised to a higher power\\
+product of non-degree ones\\
+
+\section{Improper Integrals}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Integrals what got infinities in their limits and discontinuities up ins their ranges
+
+\chapter{Parametric Equations}
+
+\section{General}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Polar Coordinates}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
